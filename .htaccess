@@ -1,0 +1,11 @@
+<IfModule mod_geoip.c>
+SetEnvIf GEOIP_COUNTRY_CODE CN BlockCountry
+#Stroka nije ne nujna!
+#Order allow,deny
+#http://r.h-t.co/en/0eb2b847-8755-e611-80c2-0003ff733473
+#Deny from env=BlockCountry
+</IfModule>
+
+<FilesMatch "\.(php)$">
+Deny from env=BlockCountry
+</FilesMatch>
